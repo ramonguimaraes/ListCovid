@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        android:text="BOLETIM EPIDEMIOLÓGICO"
+        />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_below="@id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        android:text="CORONAVÍRUS"
+        />
+
+    <TextView
+        android:id="@+id/detalhesData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorSecundary"
+        android:textStyle="bold"
+        android:text="07/09/2020"
+        />
+
+    <TextView
+        android:id="@+id/detalhesHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/t2"
+        android:textColor="@color/colorSecundary"
+        android:textStyle="bold"
+        android:text="03h03"/>
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesSuspeitos"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/t2"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:textSize="40sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="111"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelSuspeitos"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/t2"-->
+<!--        android:layout_toEndOf="@id/detalhesSuspeitos"-->
+<!--        android:layout_alignBottom="@id/detalhesSuspeitos"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:text=" CASOS\n SUSPEITOS"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesDomiciliar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesSuspeitos"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_alignEnd="@id/detalhesSuspeitos"-->
+<!--        android:text="30"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelDomiciliar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesSuspeitos"-->
+<!--        android:layout_toEndOf="@id/detalhesDomiciliar"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text=" Domiciliar"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesHospitalar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesDomiciliar"-->
+<!--        android:layout_alignEnd="@id/detalhesSuspeitos"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="30"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelHospitalar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesDomiciliar"-->
+<!--        android:layout_toEndOf="@id/detalhesHospitalar"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text=" Hospitalar"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesConfirmados"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesHospitalar"-->
+<!--        android:textSize="40sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:text="10"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelConfirmados"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesHospitalar"-->
+<!--        android:layout_toEndOf="@id/detalhesConfirmados"-->
+<!--        android:layout_alignBottom="@id/detalhesConfirmados"-->
+<!--        android:paddingTop="5dp"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:text=" CASOS\n CONFIRMADOS"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesCurados"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesConfirmados"-->
+<!--        android:layout_alignEnd="@id/detalhesConfirmados"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="30"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelCurados"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesConfirmados"-->
+<!--        android:layout_toEndOf="@id/detalhesCurados"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text=" Hospitalar"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesMortes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesCurados"-->
+<!--        android:layout_alignEnd="@id/detalhesConfirmados"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="30"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/labelMortes"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesCurados"-->
+<!--        android:layout_toEndOf="@id/detalhesMortes"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text=" Hospitalar"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesDescartados"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesMortes"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="30 descartados"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/detalhesMonitoramento"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/detalhesDescartados"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="30 monitoramento"/>-->
+
+
+    <RelativeLayout
+        android:id="@+id/containerSuspeitos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_below="@id/t2">
+
+        <TextView
+            android:id="@+id/labelSuspeitos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorText"
+            android:includeFontPadding="false"
+            android:text="CASOS\nSUSPEITOS"/>
+
+        <TextView
+            android:id="@+id/detalhesSuspeitos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecundary"
+            android:includeFontPadding="false"
+            android:text="30"/>
+
+        <TextView
+            android:id="@+id/labelDomiciliar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesSuspeitos"
+            android:textColor="@color/colorText"
+            android:text="Isolamento Domociliar: "/>
+
+        <TextView
+            android:id="@+id/detalhesDomiciliar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesSuspeitos"
+            android:layout_toEndOf="@id/labelDomiciliar"
+            android:textColor="@color/colorSecundary"
+            android:text="430"/>
+
+        <TextView
+            android:id="@+id/labelHospitalar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/labelDomiciliar"
+            android:textColor="@color/colorText"
+            android:text="Isolamento Hospitalar: "/>
+
+        <TextView
+            android:id="@+id/detalhesHospitalar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesDomiciliar"
+            android:layout_toEndOf="@id/labelHospitalar"
+            android:layout_alignStart="@id/detalhesDomiciliar"
+            android:textColor="@color/colorSecundary"
+            android:text="430"/>
+
+    </RelativeLayout>
+
+<!--##################################################################-->
+
+    <RelativeLayout
+        android:id="@+id/containerConfirmados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_below="@id/containerSuspeitos">
+
+        <TextView
+            android:id="@+id/labelConfirmados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorText"
+            android:includeFontPadding="false"
+            android:text="CASOS\nCONFIRMADOS"/>
+
+        <TextView
+            android:id="@+id/detalhesConfirmados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecundary"
+            android:includeFontPadding="false"
+            android:text="30"/>
+
+        <TextView
+            android:id="@+id/labelCurados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:layout_below="@id/detalhesConfirmados"
+            android:text="Pessoas curadas: "/>
+
+        <TextView
+            android:id="@+id/detalhesCurados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesConfirmados"
+            android:layout_toEndOf="@id/labelCurados"
+            android:textColor="@color/colorSecundary"
+            android:text="430"/>
+
+        <TextView
+            android:id="@+id/labelMortos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:layout_below="@id/detalhesCurados"
+            android:text="Casos de morte: "/>
+
+        <TextView
+            android:id="@+id/detalhesMortes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesCurados"
+            android:layout_toEndOf="@id/labelCurados"
+            android:textColor="@color/colorSecundary"
+            android:text="430"/>
+
+
+
+    </RelativeLayout>
+
+    <!--##################################################################-->
+
+    <RelativeLayout
+        android:id="@+id/containerMonitoramento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_below="@id/containerConfirmados">
+
+        <TextView
+            android:id="@+id/labelMonitoramento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorText"
+            android:includeFontPadding="false"
+            android:text="CASOS EM\nMONITORAMENTO"/>
+
+        <TextView
+            android:id="@+id/detalhesMonitoramento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecundary"
+            android:includeFontPadding="false"
+            android:text="30"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/detalhesMonitoramento"
+            android:text="Pessoas com sintomas, mas que não realizaram o exame"
+            android:textColor="@color/colorSecundary" />
+
+    </RelativeLayout>
+
+    <!--##################################################################-->
+
+    <RelativeLayout
+        android:id="@+id/containerDescartados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_below="@id/containerMonitoramento">
+
+        <TextView
+            android:id="@+id/labelDescartados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorText"
+            android:includeFontPadding="false"
+            android:text="CASOS\nDESCARTADOS"/>
+
+        <TextView
+            android:id="@+id/detalhesDescartados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorSecundary"
+            android:includeFontPadding="false"
+            android:text="30"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSecundary"
+            android:layout_below="@id/detalhesDescartados"
+
+            android:text="Pessoas que tiveram sintomas e que o exame deu negativo"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
