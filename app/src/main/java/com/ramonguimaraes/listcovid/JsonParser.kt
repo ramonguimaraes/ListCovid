@@ -22,7 +22,7 @@ class JsonParser {
 
             val jsonArray = JSONArray(json)
 
-            for (i in 0..jsonArray.length()-1){
+            for (i in 0 until jsonArray.length()-1){
 
                 val js = jsonArray.getJSONObject(i)
                 val suspeitos = js.getInt("Suspeitos")
@@ -33,8 +33,8 @@ class JsonParser {
                 val sDomiciliar = js.getInt("Sdomiciliar")
                 val sHospitalar = js.getInt("Shospitalar")
                 val mortes = js.getInt("mortes")
-                val data = formatarData(js.getString("boletim").substring(0,10))
-                val hora = getHora(js.getString("boletim").substring(11,16))
+                val data = dataParse(js.getString("boletim").substring(0,10))
+                val hora = js.getString("boletim").substring(11,16).replace(":", "h")
 
                 val boletim = Boletim(suspeitos, confirmados, descartados, monitoramento, curados, sDomiciliar, sHospitalar, mortes, data, hora)
                 lista.add(boletim)
@@ -46,18 +46,11 @@ class JsonParser {
         return lista
     }
 
-    fun formatarData(data: String): String {
-        val diaString = data
+    private fun dataParse(date: String): String {
+
         val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-        val date = LocalDate.parse(diaString)
-        val formattedDate = date.format(formatter)
-        return formattedDate
-    }
+        val formatedDate = LocalDate.parse(date)
+        return formatedDate.format(formatter)
 
-    fun getHora(hora: String): String {
-        val horaString = hora
-        val hora = LocalTime.parse(horaString)
-        return hora.toString().replace(":", "h")
     }
-
 }

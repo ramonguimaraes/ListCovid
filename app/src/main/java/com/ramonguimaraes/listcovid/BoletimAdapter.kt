@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_view.view.*
 
-class BoletimAdapter(val listaBoletins: List<Boletim>): RecyclerView.Adapter<BoletimAdapter.ViewHolder>() {
+class BoletimAdapter(val listaBoletins: ArrayList<Boletim>?): RecyclerView.Adapter<BoletimAdapter.ViewHolder>() {
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         fun bind(boletim: Boletim) {
             itemView.txt_item_data.text = boletim.data
@@ -35,10 +35,10 @@ class BoletimAdapter(val listaBoletins: List<Boletim>): RecyclerView.Adapter<Bol
     }
 
     override fun getItemCount(): Int {
-         return listaBoletins.size
+         return listaBoletins!!.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-         holder.bind(listaBoletins[position])
+         holder.bind(listaBoletins!![position])
     }
 }
