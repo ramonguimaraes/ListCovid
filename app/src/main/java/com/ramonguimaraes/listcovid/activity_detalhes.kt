@@ -5,7 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_detalhes.*
 
 class activity_detalhes : AppCompatActivity() {
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalhes)
@@ -30,6 +30,7 @@ class activity_detalhes : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
 
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
