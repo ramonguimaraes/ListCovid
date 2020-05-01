@@ -1,10 +1,13 @@
 package com.ramonguimaraes.listcovid
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 import org.json.JSONArray
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
+@Parcelize
 class Boletim(
     var suspeitos: Int=0,
     var confirmados: Int=0,
@@ -16,4 +19,4 @@ class Boletim(
     var mortes: Int=0,
     var data: String,
     var hora: String
-)
+): Parcelable

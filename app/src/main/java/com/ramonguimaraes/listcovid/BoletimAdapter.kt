@@ -27,7 +27,7 @@ class BoletimAdapter(val listaBoletins: ArrayList<Boletim>?): RecyclerView.Adapt
         val intent = Intent(context, activity_detalhes::class.java)
 
         vh.itemView.setOnClickListener {
-            intent.putExtra("position", vh.adapterPosition)
+            intent.putExtra("boletim", listaBoletins?.get(vh.adapterPosition))
             context.startActivity(intent)
         }
 
