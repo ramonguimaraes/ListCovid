@@ -15,48 +15,65 @@ class MainActivity : AppCompatActivity(){
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
+
     constructList()
+
     swipe_refresh_layout.setOnRefreshListener {
       constructList()
+
     }
   }
 
   fun constructList(){
-    var list: ArrayList<Boletim>? = arrayListOf()
-    CoroutineScope(IO).launch {
-      list = downloadData()
+    var list: ArrayList<Boletim>?
 
-      CoroutineScope(Main).launch {
-        loadList(list)
+    if(BoletimHttp.hasConnection(this)){
+      CoroutineScope(IO).launch {
+        list = downloadData()
+        CoroutineScope(Main).launch {
+          loadList(list)
+        }
       }
+
+    }else{
+      showError("sem internet", false)
+
+    }
+  }
+
+
+  fun showError(msg: String, showProg: Boolean){
+    if(msg == "" && !showProg){
+      mensageBox.visibility = View.GONE
+
+    }else if(!showProg){
+      mensagem.text = msg
+      progressBar.visibility = View.GONE
+
     }
   }
 
   fun loadList(list: ArrayList<Boletim>?){
     if (list.isNullOrEmpty()){
-      mensagem.text = "erro inesperado (lista vazia)"
-      progressBar.visibility = View.GONE
+      showError("Lista de boletins vazia", false)
       swipe_refresh_layout.isRefreshing = false
+
     }else{
-      progressBar.visibility = View.GONE
-      mensagem.visibility = View.GONE
+      showError("", false)
       lst_main.adapter = BoletimAdapter(list)
       lst_main.layoutManager = LinearLayoutManager(this)
       BoletimAdapter(list).notifyDataSetChanged()
       swipe_refresh_layout.isRefreshing = false
+
     }
   }
 
   suspend fun downloadData():ArrayList<Boletim>?{
     var boletins: ArrayList<Boletim>? = arrayListOf()
-    if(BoletimHttp.hasConnection(this)){
-      boletins!!.clear()
-      boletins = BoletimHttp.loadBoletim()
-    }else{
-      mensagem.text = "Sem internet"
-    }
-
+    boletins!!.clear()
+    boletins = BoletimHttp.loadBoletim()
     return boletins
+
   }
 }
 

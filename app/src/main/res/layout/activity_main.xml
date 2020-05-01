@@ -20,23 +20,36 @@
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_view"
             tools:itemCount="0"/>
-        <TextView
-            android:id="@+id/mensagem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:layout_centerInParent="true"
-            android:textStyle="bold"
-            android:text="Carregando Dados..."/>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_marginTop="10dp"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_below="@id/mensagem"
-            android:layout_centerHorizontal="true"
-            />
+        <RelativeLayout
+            android:background="@color/colorPrimary"
+            android:id="@+id/mensageBox"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/mensagem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:text="Carregando Dados..."/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_marginTop="10dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/mensagem"
+                android:layout_centerHorizontal="true"
+                />
+
+        </RelativeLayout>
+
+
 
     </RelativeLayout>
 
